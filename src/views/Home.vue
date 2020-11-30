@@ -1,18 +1,19 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <!-- 路由 -->
+    <router-view />
+    <!-- navbar -->
   </div>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component'
-import HelloWorld from '@/components/HelloWorld.vue' // @ is an alias to /src
 
-@Options({
-  components: {
-    HelloWorld
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  setup () {
+    // 必须有返回值，否则会报错
+     return {};
   }
 })
-export default class Home extends Vue {}
 </script>
