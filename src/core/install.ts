@@ -1,4 +1,4 @@
-
+// 主要是一些组件注册和插件注册
 import router from '../router'
 import store from '../store'
 import { Button } from 'vant'
