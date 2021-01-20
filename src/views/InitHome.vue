@@ -3,25 +3,25 @@
     <!-- 初始首页 -->
     <div class="banner">
       <!-- 背景图片 -->
-      <img src="../assets/images/banner.png" alt="" />
+      <img src="../assets/images/banner.png"  />
     </div>
     <div class="content">
       <!-- 主要内容 -->
       <div class="top">
-        <img src="../assets/images/top.png" alt="" />
+        <img src="../assets/images/top.png"  />
       </div>
       <div class="middle">
         <div class="middle-content">
           <div class="money">500000</div>
           <div>
-            <van-button type="primary" round block @click="handleApply"
-              >立即申请</van-button
-            >
+            <van-button type="primary" round block @click="handleApply">
+              立即申请
+            </van-button>
           </div>
         </div>
       </div>
       <div class="bottom">
-        <img src="../assets/images/bottom.png" alt="" />
+        <img src="../assets/images/bottom.png"  />
       </div>
     </div>
   </div>
@@ -30,6 +30,7 @@
 <script>
 import { defineComponent } from 'vue';
 import { useRouter } from 'vue-router';
+
 export default defineComponent({
   setup() {
     const router = useRouter();

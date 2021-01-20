@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import { createRouter, RouteRecordRaw, createWebHashHistory } from 'vue-router';
 const Home = () => import('../views/Home.vue');
 
 const Login = () => import('../views/Login.vue');
@@ -41,8 +41,9 @@ const routes: Array<RouteRecordRaw> = [
 	}
 ];
 
+// createWebHistory 没有#号的路由
 const router = createRouter({
-	history: createWebHistory(process.env.BASE_URL),
+	history: createWebHashHistory(process.env.BASE_URL),
 	routes
 });
 

@@ -7,9 +7,10 @@
         <!-- name是values中的值 -->
       <van-field
         v-model="state.username"
-        label="用户名"
-        placeholder="用户名"
-        :rules="[{ required: true, message: '请填写用户名' }]"
+        label="手机号"
+        placeholder="手机号"
+        :maxlength="11"
+        :rules="[{ required: true, message: '请输入手机号' }]"
       />
       <van-field
         v-model="state.password"
@@ -26,6 +27,7 @@
 </template>
 <script>
 import { defineComponent, reactive } from 'vue';
+import { loginReq } from '@/api/login'
 import { useRouter } from 'vue-router';
 
 export default defineComponent({
@@ -36,13 +38,18 @@ export default defineComponent({
     });
 
     const router = useRouter();
-    const onSubmit = (values) => {
-      router.push('/')
+
+    const onSubmit = async (values) => {
+       const res = await loginReq({ ...values });
+       console.log(res)
+       router.push(`/`)
     };
+
     return {
       state,
       onSubmit
     };
+
   }
 });
 </script>

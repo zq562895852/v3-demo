@@ -9,6 +9,7 @@ function resolve(dir) {
 
 module.exports = {
 	// publicPath: process.env.NODE_ENV === 'production' ? '/vant-demo/' : '/',
+	// lintOnSave: false,
 	css: {
 		loaderOptions: {
 			less: {
@@ -24,5 +25,21 @@ module.exports = {
 			}
 		}
 	},
-	
+	parallel: require('os').cpus().length > 1,
+	devServer: {
+		hot: true,
+		proxy: {
+			'/api': {
+				// target: 'http://192.168.2.58:8089/api/factoring', //代理
+				target: 'https://test3.msyuns.com/jdy/', //代理
+				// http://192.168.2.57:8080/
+				// target: 'http://192.168.2.57:8080/', //代理
+				changeOrigin: true,
+				ws: true,
+				pathRewrite: {
+					'^/api': ''
+				}
+			}
+		}
+	}
 };
